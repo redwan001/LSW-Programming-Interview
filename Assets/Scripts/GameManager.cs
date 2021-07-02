@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     public bool gameMenuOpen;
     public bool dailogeActive;
+
+    public string[] itemHeld;
+    public int[] numberOfItems;
+    public Item[] referenceItems;
     
     void Start()
     {
@@ -30,4 +34,19 @@ public class GameManager : MonoBehaviour
         else
             PlayerController.instance.canMove = true;
     }
+
+    public Item GetItemDetails(string itemToGrab) 
+    {
+        for(int i = 0; i < referenceItems.Length; i++)
+        {
+            if (referenceItems[i].itemName == itemToGrab) {
+                return referenceItems[i];
+            }
+        }
+
+        return null;
+    }
+
+
+
 }
