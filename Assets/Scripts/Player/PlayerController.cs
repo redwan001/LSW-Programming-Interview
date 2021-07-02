@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Animator _anim;
     private Vector3 _bottomLeft;
     private Vector3 _topRight;
+    public bool canMove = true;
     void Start()
     {
         if (instance == null)
@@ -30,8 +31,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (canMove)
+            Controls();
+        else
+            _rb.velocity = Vector2.zero;
 
-        Controls();
         AnimationDirections();
         Bounds();
 
@@ -50,9 +54,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            _anim.enabled = true;
-            _anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            _anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (canMove)
+            {
+                _anim.enabled = true;
+                _anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                _anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
 
         }
         else
