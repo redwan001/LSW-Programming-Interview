@@ -45,6 +45,7 @@ public class GameMenu : MonoBehaviour
     }
     public void UpdateStats()
     {
+        if(goldText != null)
         goldText.text = GameManager.instance.currentGold.ToString();
         nameText.text = playerStats[0].charName;
         charImage.sprite = playerStats[0].dress;

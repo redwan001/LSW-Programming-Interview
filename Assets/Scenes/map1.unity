@@ -9402,6 +9402,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596546599}
   m_CullTransparentMesh: 1
+--- !u!1001 &664797032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450624991, guid: ac2b06a18d262904cb8d0cc24d3d63fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 450624991, guid: ac2b06a18d262904cb8d0cc24d3d63fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.96643955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542536, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542537, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.5952387
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542537, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6967585
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542537, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.53317976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542537, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6772231
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542539, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Area Exit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542542, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: areaToLoad
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815813845380542542, guid: ac2b06a18d262904cb8d0cc24d3d63fb,
+        type: 3}
+      propertyPath: areaTrasitionName
+      value: 1-3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac2b06a18d262904cb8d0cc24d3d63fb, type: 3}
 --- !u!1 &678262907
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,6 +15520,7 @@ MonoBehaviour:
   menu: {fileID: 2089555775}
   gameMenuOpen: 0
   dailogeActive: 0
+  shopActive: 0
   itemHeld:
   - Armor
   - 
@@ -15439,6 +15547,7 @@ MonoBehaviour:
   referenceItems:
   - {fileID: 6104257988823178890, guid: f2fee51092eb04448804db9c8d2d6453, type: 3}
   - {fileID: 5476102216523392643, guid: 843aaf5b787dfa94b9d66c423b8dbf03, type: 3}
+  currentGold: 0
 --- !u!114 &1966026184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15486,6 +15595,7 @@ MonoBehaviour:
   itemName: {fileID: 2065630298}
   itemDes: {fileID: 233268740}
   useBtnText: {fileID: 1370632757}
+  goldText: {fileID: 0}
 --- !u!1 &1970821145
 GameObject:
   m_ObjectHideFlags: 0

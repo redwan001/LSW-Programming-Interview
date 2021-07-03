@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public bool gameMenuOpen;
     public bool dailogeActive;
+    public bool shopActive;
 
     public string[] itemHeld;
     public int[] numberOfItems;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-
+      
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
     
      
-        if (gameMenuOpen || dailogeActive)
+        if (gameMenuOpen || dailogeActive || shopActive)
         {
             PlayerController.instance.canMove = false;
         }
