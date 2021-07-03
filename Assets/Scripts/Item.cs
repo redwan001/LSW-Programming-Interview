@@ -30,7 +30,7 @@ public void Use()
         {
             if(selectedChar.equippedWpn != "")
             {
-                
+                GameManager.instance.AddItems(selectedChar.equippedWpn);
             }
             selectedChar.equippedWpn = itemName;
         }
@@ -38,9 +38,10 @@ public void Use()
         {
             if (selectedChar.equippedArmr != "")
             {
-
+                GameManager.instance.AddItems(selectedChar.equippedArmr);
             }
             selectedChar.equippedArmr = itemName;
         }
+        GameManager.instance.RemoveItem(itemName);
     }
 }

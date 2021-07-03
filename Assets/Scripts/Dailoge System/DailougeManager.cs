@@ -24,26 +24,29 @@ public class DailougeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dailogeBox.activeInHierarchy)
+        if (dailogeBox != null)
         {
-            if(Input.GetButtonUp("Fire1") )
+            if (dailogeBox.activeInHierarchy)
             {
-                if (!_started)
+                if (Input.GetButtonUp("Fire1"))
                 {
-                    currentLine++;
-                    if (currentLine >= dailogeLines.Length)
+                    if (!_started)
                     {
-                        dailogeBox.SetActive(false);
-                        GameManager.instance.dailogeActive = false;
+                        currentLine++;
+                        if (currentLine >= dailogeLines.Length)
+                        {
+                            dailogeBox.SetActive(false);
+                            GameManager.instance.dailogeActive = false;
+                        }
+                        else
+                        {
+                            ChechkIfName();
+                            dailogText.text = dailogeLines[currentLine];
+                        }
                     }
                     else
-                    {
-                        ChechkIfName();
-                        dailogText.text = dailogeLines[currentLine];
-                    }
+                        _started = false;
                 }
-                else
-                    _started = false;
             }
         }
     }

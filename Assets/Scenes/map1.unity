@@ -9419,7 +9419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &678262908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9716,6 +9716,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1966026184}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: ShowItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1966026184}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: ItemPanelEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15408,22 +15420,22 @@ MonoBehaviour:
   - Iron Sword
   - 
   - 
-  - Armor
-  - 
-  - 
-  - Iron Sword
-  - 
-  - 
-  - Iron Sword
   - 
   - 
   - 
-  - Iron Sword
   - 
-  - Iron Sword
-  - Armor
-  - Iron Sword
-  numberOfItems: 0200000000000000000000000100000000000000000000000300000000000000000000000200000000000000000000000b0000000000000000000000000000000500000000000000080000000200000001000000
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  numberOfItems: 020000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   referenceItems:
   - {fileID: 6104257988823178890, guid: f2fee51092eb04448804db9c8d2d6453, type: 3}
   - {fileID: 5476102216523392643, guid: 843aaf5b787dfa94b9d66c423b8dbf03, type: 3}

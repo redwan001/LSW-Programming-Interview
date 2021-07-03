@@ -36,8 +36,14 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.J))
         {
-            AddItems("Iron Armor");
+            AddItems("Iron Sword");
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            RemoveItem("Iron Sword");
+        }
+
+       
     }
 
     public Item GetItemDetails(string itemToGrab) 
@@ -112,7 +118,35 @@ public class GameManager : MonoBehaviour
     }
     public void RemoveItem(string itemToRemove)
     {
-  
+        bool foundItem = false;
+        int itemPosition = 0;
+
+        for (int i = 0; i < itemHeld.Length; i++)
+        {
+            if (itemHeld[i] == itemToRemove)
+            {
+                foundItem = true;
+                itemPosition = i;
+
+                i = itemHeld.Length;
+            }
+        }
+
+        if (foundItem)
+        {
+            numberOfItems[itemPosition]--;
+
+            if (numberOfItems[itemPosition] <= 0)
+            {
+                itemHeld[itemPosition] = "";
+            }
+
+            GameMenu.instance.ShowItems();
+        }
+        else
+        {
+            Debug.LogError("Couldn't find " + itemToRemove);
+        }
     }
 
 }
