@@ -8601,7 +8601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9487194, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10874,7 +10874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 886537284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1966026184}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &886537284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11006,7 +11018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1001460781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12661,11 +12673,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3636489141479186082, guid: 042c9fc31f655014ab86c087892ab918,
-        type: 3}
-      propertyPath: canMove
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3636489141479186085, guid: 042c9fc31f655014ab86c087892ab918,
         type: 3}
       propertyPath: m_RootOrder
@@ -15522,7 +15529,7 @@ MonoBehaviour:
   dailogeActive: 0
   shopActive: 0
   itemHeld:
-  - Armor
+  - 
   - 
   - 
   - Iron Sword
@@ -15543,7 +15550,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  numberOfItems: 020000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  numberOfItems: 000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   referenceItems:
   - {fileID: 6104257988823178890, guid: f2fee51092eb04448804db9c8d2d6453, type: 3}
   - {fileID: 5476102216523392643, guid: 843aaf5b787dfa94b9d66c423b8dbf03, type: 3}
@@ -16215,7 +16222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save
+  m_Text: Stats
 --- !u!222 &2017955298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16589,12 +16596,12 @@ GameObject:
   - component: {fileID: 2092258877}
   - component: {fileID: 2092258876}
   m_Layer: 5
-  m_Name: save btn (2)
+  m_Name: stats info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2092258875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16658,7 +16665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2092258877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1966026184}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: EnableStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2092258877
 MonoBehaviour:
   m_ObjectHideFlags: 0

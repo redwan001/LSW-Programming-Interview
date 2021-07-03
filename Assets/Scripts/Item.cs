@@ -41,6 +41,7 @@ public void Use()
                 GameManager.instance.AddItems(selectedChar.equippedArmr);
             }
             selectedChar.equippedArmr = itemName;
+            PlayerController.instance.transform.GetChild(0).gameObject.SetActive(true);
         }
         GameManager.instance.RemoveItem(itemName);
     }

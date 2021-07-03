@@ -102,4 +102,10 @@ public class GameMenu : MonoBehaviour
     {
         activeItem.Use();
     }
+
+    public void CloseMenu()
+    {
+        menu.SetActive(false);
+        GameManager.instance.gameMenuOpen = false;
+    }
 }

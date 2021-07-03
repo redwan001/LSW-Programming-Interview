@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour
 
     public int currentGold;
     
+
+
     void Start()
     {
       
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

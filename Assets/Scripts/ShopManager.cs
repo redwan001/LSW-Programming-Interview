@@ -106,10 +106,12 @@ public class ShopManager : MonoBehaviour
     }
     public void SelectSellItem(Item sellItem)
     {
-       
+        if (sellItem != null)
+        {
             selectedItem = sellItem;
             sellItemName.text = selectedItem.itemName;
             sellItemDes.text = selectedItem.description;
+        }
             sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * .5f).ToString();
 
         
