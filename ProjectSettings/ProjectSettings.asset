@@ -147,7 +147,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Company.ProductName
-    Standalone: unity.DefaultCompany.2D_RPG_Starter_Art
+    Standalone: com.DefaultCompany.TestProject
     iPhone: com.Company.ProductName
     tvOS: com.Company.ProductName
   buildNumber:
