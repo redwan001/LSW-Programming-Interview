@@ -19,15 +19,28 @@ public class Item : MonoBehaviour
     public int weaponStrength;
     public int armorStrength;
 
-
-    void Start()
+public void Use()
     {
-        
-    }
+        CharacterStats selectedChar = GameManager.instance.playerStats[0];
+        if(isItem)
+        {
+            //increase Hp
+        }
+        if(isWeapon)
+        {
+            if(selectedChar.equippedWpn != "")
+            {
+                
+            }
+            selectedChar.equippedWpn = itemName;
+        }
+        if (isArmor)
+        {
+            if (selectedChar.equippedArmr != "")
+            {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            }
+            selectedChar.equippedArmr = itemName;
+        }
     }
 }

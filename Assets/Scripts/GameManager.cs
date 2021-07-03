@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
         else
             PlayerController.instance.canMove = true;
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            AddItems("Iron Armor");
+        }
     }
 
     public Item GetItemDetails(string itemToGrab) 
@@ -46,7 +51,68 @@ public class GameManager : MonoBehaviour
 
         return null;
     }
+    public void SortItems()
+    {
+        bool itemAFterSpace = true;
 
+        while (itemAFterSpace)
+        {
+            itemAFterSpace = false;
+            for (int i = 0; i < itemHeld.Length - 1; i++)
+            {
+                if (itemHeld[i] == "")
+                {
+                    itemHeld[i] = itemHeld[i + 1];
+                    itemHeld[i + 1] = "";
 
+                    numberOfItems[i] = numberOfItems[i + 1];
+                    numberOfItems[i + 1] = 0;
+
+                    if (itemHeld[i] != "")
+                    {
+                        itemAFterSpace = true;
+                    }
+                }
+            }
+        }
+    }
+    public void AddItems(string itemToAdd)
+    {
+        int newItemPos = 0;
+        bool foundEmpty = false;
+        for (int i = 0; i < itemHeld.Length; i++)
+        {
+            if (itemHeld[i] == "" || itemHeld[i] == itemToAdd)
+            {
+                newItemPos = i;
+                i = itemHeld.Length;
+                foundEmpty = true;
+            }
+        }
+        if(foundEmpty)
+        {
+            bool itemExist = false;
+            for (int i = 0 ; i < referenceItems.Length ; i++){
+                if (referenceItems[i].itemName == itemToAdd)
+                {
+                    itemExist = true;
+                    i = referenceItems.Length;
+                }
+            }
+            if (itemExist)
+            {
+                itemHeld[newItemPos] = itemToAdd;
+                numberOfItems[newItemPos]++;
+            }
+            else
+                Debug.LogError("stop");
+        }
+        GameMenu.instance.ShowItems();
+        
+    }
+    public void RemoveItem(string itemToRemove)
+    {
+  
+    }
 
 }

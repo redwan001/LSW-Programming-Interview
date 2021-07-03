@@ -4,16 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameMenu : MonoBehaviour
 {
-
+    public static GameMenu instance;
     public GameObject menu;
     public CharacterStats[] playerStats;
-    public Text nameText;
+    public Text nameText, armorName, weaponName;
     public Image charImage;
+    public GameObject itemPanel;
 
     public ItemButton[] itemButtons;
+    public string selectedItem;
+    public Item activeItem ;
+    public Text itemName, itemDes, useBtnText ;
     void Start()
     {
-
+        instance = this;
     }
 
 
@@ -41,15 +45,20 @@ public class GameMenu : MonoBehaviour
     {
         nameText.text = playerStats[0].charName;
         charImage.sprite = playerStats[0].dress;
+        armorName.text = playerStats[0].equippedArmr;
+        weaponName.text = playerStats[0].equippedWpn;
     }
+
 
     public void ShowItems()
     {
-        for(int i = 0; i < itemButtons.Length; i++)
+        GameManager.instance.SortItems();
+
+        for (int i = 0; i < itemButtons.Length; i++)
         {
             itemButtons[i].buttonValue = i;
 
-            if(GameManager.instance.itemHeld[i] != "")
+            if (GameManager.instance.itemHeld[i] != "")
             {
                 itemButtons[i].buttonImage.gameObject.SetActive(true);
                 itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemHeld[i]).itemSprite;
@@ -61,5 +70,32 @@ public class GameMenu : MonoBehaviour
                 itemButtons[i].ammountText.text = "";
             }
         }
+    }
+
+    public void 
+        ItemPanelEnable()
+    {
+        itemPanel.SetActive(true);
+    }
+
+    public void SelectItem(Item newitem)
+    {
+        activeItem = newitem;
+        if(activeItem.isItem)
+        {
+            useBtnText.text = "Use";
+        }
+        if(activeItem.isWeapon || activeItem.isArmor)
+        {
+            useBtnText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDes.text = activeItem.description;
+    }
+
+    public void UseItem()
+    {
+        activeItem.Use();
     }
 }

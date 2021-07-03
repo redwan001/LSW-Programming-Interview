@@ -6,6 +6,8 @@ public class CharacterStats : MonoBehaviour
 {
     public string charName;
     public Sprite dress;
+    public string equippedWpn;
+    public string equippedArmr;
     void Start()
     {
         
