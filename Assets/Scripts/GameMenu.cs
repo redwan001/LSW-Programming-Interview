@@ -15,6 +15,7 @@ public class GameMenu : MonoBehaviour
     public string selectedItem;
     public Item activeItem ;
     public Text itemName, itemDes, useBtnText ;
+    public Text goldText;
     void Start()
     {
         instance = this;
@@ -23,6 +24,7 @@ public class GameMenu : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetButtonDown("Fire2"))
         {
             if (menu.activeInHierarchy)
@@ -43,6 +45,7 @@ public class GameMenu : MonoBehaviour
     }
     public void UpdateStats()
     {
+        goldText.text = GameManager.instance.currentGold.ToString();
         nameText.text = playerStats[0].charName;
         charImage.sprite = playerStats[0].dress;
         armorName.text = playerStats[0].equippedArmr;

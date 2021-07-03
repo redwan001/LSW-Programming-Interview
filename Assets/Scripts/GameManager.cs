@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public string[] itemHeld;
     public int[] numberOfItems;
     public Item[] referenceItems;
+
+    public int currentGold;
     
     void Start()
     {
