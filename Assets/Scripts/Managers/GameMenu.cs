@@ -6,7 +6,7 @@ public class GameMenu : MonoBehaviour
 {
     public static GameMenu instance;
     public GameObject menu;
-    public CharacterStats[] playerStats;
+    CharacterStats[] playerStats;
     public Text nameText, armorName, weaponName;
     public Image charImage;
     public GameObject itemPanel;
@@ -43,9 +43,18 @@ public class GameMenu : MonoBehaviour
             }
         }
     }
+    public void DiscardItem()
+    {
+        if (activeItem != null)
+        {
+            GameManager.instance.RemoveItem(activeItem.itemName);
+        }
+    }
+
     public void UpdateStats()
     {
-        if(goldText != null)
+        playerStats = GameManager.instance.playerStats;
+        if (goldText != null)
         goldText.text = GameManager.instance.currentGold.ToString();
         nameText.text = playerStats[0].charName;
         charImage.sprite = playerStats[0].dress;
@@ -80,6 +89,11 @@ public class GameMenu : MonoBehaviour
         ItemPanelEnable()
     {
         itemPanel.SetActive(true);
+    }
+    public void SaveGame()
+    {
+        GameManager.instance.SaveData();
+        
     }
 
     public void SelectItem(Item newitem)

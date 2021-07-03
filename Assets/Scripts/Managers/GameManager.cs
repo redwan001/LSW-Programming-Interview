@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
     public Item[] referenceItems;
 
     public int currentGold;
-    
+
 
 
     void Start()
     {
-      
+
         instance = this;
         //DontDestroyOnLoad(gameObject);
     }
@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-     
+
+
         if (gameMenuOpen || dailogeActive || shopActive)
         {
             PlayerController.instance.canMove = false;
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         else
             PlayerController.instance.canMove = true;
 
-        if(Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             AddItems("Iron Sword");
         }
@@ -47,15 +47,24 @@ public class GameManager : MonoBehaviour
         {
             RemoveItem("Iron Sword");
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SaveData();
+        }
 
-       
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            LoadData();
+        }
+
     }
 
-    public Item GetItemDetails(string itemToGrab) 
+    public Item GetItemDetails(string itemToGrab)
     {
-        for(int i = 0; i < referenceItems.Length; i++)
+        for (int i = 0; i < referenceItems.Length; i++)
         {
-            if (referenceItems[i].itemName == itemToGrab) {
+            if (referenceItems[i].itemName == itemToGrab)
+            {
                 return referenceItems[i];
             }
         }
@@ -100,10 +109,11 @@ public class GameManager : MonoBehaviour
                 foundEmpty = true;
             }
         }
-        if(foundEmpty)
+        if (foundEmpty)
         {
             bool itemExist = false;
-            for (int i = 0 ; i < referenceItems.Length ; i++){
+            for (int i = 0; i < referenceItems.Length; i++)
+            {
                 if (referenceItems[i].itemName == itemToAdd)
                 {
                     itemExist = true;
@@ -119,7 +129,7 @@ public class GameManager : MonoBehaviour
                 Debug.LogError("stop");
         }
         GameMenu.instance.ShowItems();
-        
+
     }
     public void RemoveItem(string itemToRemove)
     {
@@ -154,4 +164,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void SaveData()
+    {
+        //store inventory data
+        for (int i = 0; i < itemHeld.Length; i++)
+        {
+            PlayerPrefs.SetString("ItemInInventory_" + i, itemHeld[i]);
+            PlayerPrefs.SetInt("ItemAmount_" + i, numberOfItems[i]);
+        }
+    }
+    public void LoadData()
+    {
+        for (int i = 0; i < itemHeld.Length; i++)
+        {
+            itemHeld[i] = PlayerPrefs.GetString("ItemInInventory_" + i);
+            numberOfItems[i] = PlayerPrefs.GetInt("ItemAmount_" + i);
+        }
+    }
 }
